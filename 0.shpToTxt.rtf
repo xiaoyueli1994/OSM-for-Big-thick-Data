@@ -1,0 +1,220 @@
+{\rtf1\ansi\ansicpg936\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fnil\fcharset134 STSongti-SC-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa0\qj\partightenfactor0
+
+\f0\fs28 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, type,
+\f1 \uc0\u160 
+\f0 st_astext(geom) as coordinates\
+FROM public.gis_osm_buildings_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/buildings_a.txt' header;\
+\pard\pardeftab720\sa0\qj\partightenfactor0
+
+\f1 \cf0 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_landuse_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/landuse_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_natural_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/natural_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates\
+FROM public.gis_osm_natural_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/natural.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, population, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_places_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/places_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, population, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_places_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/places.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_pofw_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/pofw_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_pofw_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/pofw.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_pois_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/pois_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_pois_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/pois.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name,
+\f1 \uc0\u160 
+\f0 layer, bridge, tunnel,
+\f1 \uc0\u160 
+\f0 st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_railways_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/railways.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name,
+\f1 \uc0\u160 
+\f0 ref, oneway, maxspeed, layer, bridge, tunnel, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_roads_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/roads.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_traffic_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/traffic_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_traffic_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/traffic.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_transport_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/transport_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_transport_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/transport.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_water_a_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/water_a.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+COPY (SELECT gid,
+\f1 \uc0\u160 
+\f0 osm_id, code, fclass, width, name, st_astext(geom) as coordinates
+\f1 \uc0\u160 
+\f0 \
+FROM public.gis_osm_waterways_free_1\
+ORDER BY gid ASC)\
+TO 'D:/openstreetmapdata/waterways.txt' header;\
+
+\f1 \uc0\u160 
+\f0 \
+
+\f1 \uc0\u160 
+\f0 \
+
+\f1 \uc0\u160 
+\f0 \
+\'a0\
+}
